@@ -13,6 +13,10 @@ class UnitsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+
+    def show
+      @units = Unit.all
+    end
   end
 
 
