@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :shops do
-    resources :units, only: [:new, :create, :show]
+    resources :units, [:index, :new, :create]
   end
 
   resources :booking, only: [:new, :create]

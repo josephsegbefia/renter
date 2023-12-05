@@ -1,6 +1,9 @@
 class UnitsController < ApplicationController
   before_action :set_shop, only: [:new, :create]
 
+  def index
+    @units = Unit.all
+  end
   def new
     @unit = Unit.new
   end
@@ -15,7 +18,7 @@ class UnitsController < ApplicationController
     end
 
     def show
-      @units = Unit.all
+      @unit = Unit.find(params[:id])
     end
   end
 

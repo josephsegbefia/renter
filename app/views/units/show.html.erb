@@ -1,9 +1,0 @@
-<h1>Units to choose from</h1>
-
-<ol>
-  <% @units.each do |unit| %>
-    <li><%= unit.price %></li>
-    <li><%= unit.description %></li>
-    <%= link_to 'Book this unit', new_booking_path(unit_id: @unit.id) %>
-  <% end %>
-</ol>
