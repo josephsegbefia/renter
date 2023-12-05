@@ -3,6 +3,11 @@ class UnitsController < ApplicationController
   before_action :set_shop, only: [:new, :create]
 
   def index
+    @units = Unit.all
+  end
+
+  def show
+    @unit = Unit.find(params[:unit_id])
   end
 
   def new
@@ -11,7 +16,7 @@ class UnitsController < ApplicationController
 
   def create
     @unit = Unit.new(unit_params)
-    @unit.shop = @shop
+    @unit.shop_id = @shop.id
     if @unit.save
       redirect_to @shop, notice: "Unit added successfully"
     else
