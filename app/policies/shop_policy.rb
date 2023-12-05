@@ -4,12 +4,12 @@ class ShopPolicy < ApplicationPolicy
     # def resolve
     #   scope.all
     # end
-    def new
-      create?
-    end
+  end
+  def new?
+    create?
+  end
 
-    def create?
-      true
-    end
+  def create?
+    true
   end
 end

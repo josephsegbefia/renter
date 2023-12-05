@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get "units/index", to: "units#index"
+
+  get "dashboard", to: "dashboard#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :shops do
-    resources :units, only: [:new, :create]
+    resources :units, only: [:new, :create, :show]
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
