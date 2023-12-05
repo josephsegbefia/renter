@@ -4,8 +4,13 @@ Rails.application.routes.draw do
 
   get "units/index", to: "units#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :shops do
+  resources :shops, only: [:new, :create, :index, :show]do
     resources :units, only: [:new, :create]
+
+  end
+
+  resources :bookings, only: [] do
+    resources :reviews, only: [:new, :create]
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -14,5 +19,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :shops, only: [:new, :create]
+
 end

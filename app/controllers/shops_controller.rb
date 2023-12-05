@@ -1,13 +1,15 @@
 class ShopsController < ApplicationController
-
   def index
-
+    @shops = Shop.all
   end
-
 
   def new
     @shop = Shop.new
     authorize @shop
+  end
+
+  def show
+    @boat = Boat.find(params[:id])
   end
 
   def create
