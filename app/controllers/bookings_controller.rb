@@ -7,13 +7,17 @@ class BookingsController < ApplicationController
   end
 
   def create
-    raise
     @booking = Booking.new(booking_params)
-    @shop = Shop.find(params[:id])
-    @unit = Unit.find(params[:id])
+    @shop = Shop.find(params[:shop_id])
+    @unit = Unit.find(params[:unit_id])
     @booking.user = current_user
-    @booking.shop = @shop
-    @booking.unit = @unit.id
+    # @booking.shop = @shop
+    @booking.unit = @unit
+    if @booking.save
+      redirect_to root_path, notice: "Booking was created successfully"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
