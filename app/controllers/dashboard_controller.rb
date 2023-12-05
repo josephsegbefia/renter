@@ -1,9 +1,7 @@
 class DashboardController < ApplicationController
   def index
-    @user = current_user
-    @bookings = @user.bookings
-
-
+    @shops = policy_scope(Shop)
+    @bookings = policy_scope(Booking)
+    raise
   end
-
 end
