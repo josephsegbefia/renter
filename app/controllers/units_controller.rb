@@ -1,5 +1,9 @@
 class UnitsController < ApplicationController
+  before_action :authenticate_user!, only: [ :create :new]
   before_action :set_shop, only: [:new, :create]
+  
+  def index
+  end 
 
   def new
     @unit = Unit.new
