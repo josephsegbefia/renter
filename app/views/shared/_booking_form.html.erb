@@ -1,7 +1,7 @@
-<%= simple_form_for(@booking) do |f| %>
+<%= simple_form_for([@shop, @unit, @booking]) do |f| %>
   <% if @booking.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@booking.errors.count, "error") %> prevented this booking from being saved:</h2>
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
 
       <ul>
         <% @booking.errors.full_messages.each do |message| %>
@@ -11,11 +11,9 @@
     </div>
   <% end %>
 
-  <%= f.input :start_date, as: :date_picker %>
+  <%= f.input :start_date %>
 
-  <%= f.input :end_date, as: :date_picker %>
-
-  <%= f.hidden_field :unit_id, value: params[:unit_id] %>
+  <%= f.input :end_date %>
 
   <div class="actions">
     <%= f.submit %>
