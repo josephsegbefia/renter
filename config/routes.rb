@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get "units/index", to: "units#index"
+
+  get "dashboard", to: "dashboard#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :shops do
     resources :units, only: [:new, :create]
