@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :shops, only: [:new, :create, :index, :show] do
-    resources :units, only: [:index, :new, :create] do
+    resources :units, only: [:new, :create] do
       resources :bookings, only: [:new, :create]
     end
   end
