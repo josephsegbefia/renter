@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_06_174545) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_06_181910) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_174545) do
     t.date "start_date"
     t.date "end_date"
     t.integer "status"
-    t.string "payment_intent"
+    t.string "payment_intent_id"
     t.index ["unit_id"], name: "index_bookings_on_unit_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

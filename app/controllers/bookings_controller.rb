@@ -27,16 +27,30 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @unit = Unit.find(params[:unit_id])
 
-    @payment_intent = Stripe::PaymentIntent.create({
+    if @booking.payment_intent_id
+      payment_intent = get_payment_intent
+    else
+      payment_intent = create_payment_intent
+      @booking.update!(payment_intent_id: payment_intent.id)
+    end
+    @payment_intent_client_secret = payment_intent.client_secret
+    authorize @booking
+  end
+
+  private
+
+  def create_payment_intent
+    Stripe::PaymentIntent.create({
       amount: @unit.price,
       currency: 'eur',
       automatic_payment_methods: {enabled: true},
       description: "Booking #{@booking.id}"
     })
-    authorize @booking
   end
 
-  private
+  def get_payment_intent
+    Stripe::PaymentIntent.retrieve(@booking.payment_intent_id)
+  end
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
