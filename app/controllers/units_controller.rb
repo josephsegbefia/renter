@@ -6,24 +6,23 @@ class UnitsController < ApplicationController
     @units = Unit.all
   end
 
-  def show
-    @unit = Unit.find(params[:unit_id])
-  end
-
   def new
     @unit = Unit.new
   end
 
   def create
     @unit = Unit.new(unit_params)
-    @unit.shop_id = @shop.id
+    @unit.shop = @shop
     if @unit.save
-      redirect_to @shop, notice: "Unit added successfully"
+      redirect_to shop_units_path, notice: "Unit added successfully"
     else
       render :new, status: :unprocessable_entity
     end
   end
-
+  
+  def show
+    @unit = Unit.find(params[:unit_id])
+  end
 
   private
 
