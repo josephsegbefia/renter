@@ -4,11 +4,37 @@
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="welcome">
-        <h1 class="text-center mb-4 py-3">Welcome, Renter and potential business owner %></h1>
+        <h1 class="text-center mb-4 py-3">Welcome, Renter and potential business owner</h1>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Start your shop
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Create Your Shop</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for(@shop, html: { class: 'mt-4' }) do |modal_form| %>
+            <%= modal_form.input :title, label: 'Title' %>
+            <%= modal_form.input :description, label: 'Description' %>
+            <%= modal_form.input :photo, as: :file, label: 'Photo' %>
+            <%= modal_form.submit 'Submit', class: 'button mt-3' %>
+          <% end %>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
-
-
-<button type="button" class="btn btn-secondary">Create a Shop</button>
