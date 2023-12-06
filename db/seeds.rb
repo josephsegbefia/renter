@@ -7,3 +7,28 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Booking.destroy_all
+Boat.destroy_all
+User.destroy_all
+
+
+test = User.create! (
+  email: "test@tester",
+  password: "test@tester",
+  first_name: "Test",
+  last_name: "Tester"
+)
+
+
+shop = Shop.create! (
+  title: "Hobb's Shop",
+  text: "We are a beautiful shop",
+  user: test
+)
+
+unit = Unit.create! (
+  price: 400,
+  description: "Surfboard",
+  available: true,
+  shop: shop
+)
