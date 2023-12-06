@@ -25,7 +25,9 @@ class UnitsController < ApplicationController
   end
 
   def show
+    @shop = Shop.find(params[:shop_id])
     @unit = Unit.find(params[:id])
+    # @booking = Booking.find(params[:booking_id])
     authorize @unit
   end
 

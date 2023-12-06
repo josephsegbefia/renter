@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @shop = Shop.find(params[:shop_id])
     @unit = Unit.find(params[:unit_id])
     @booking.user = current_user
-    @booking.shop_id = @shop.id
+    # @booking.shop = @shop.id
     @booking.unit = @unit
     authorize @booking
     if @booking.save
@@ -25,6 +25,14 @@ class BookingsController < ApplicationController
 
   def pay
     @booking = Booking.find(params[:booking_id])
+    @unit = Unit.find(params[:unit_id])
+
+    @payment_intent = Stripe::PaymentIntent.create({
+      amount: @unit.price,
+      currency: 'eur',
+      automatic_payment_methods: {enabled: true},
+      description: "Booking #{@booking.id}"
+    })
     authorize @booking
   end
 
