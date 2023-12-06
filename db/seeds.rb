@@ -32,3 +32,10 @@ unit = Unit.create! (
   available: true,
   shop: shop
 )
+
+booking = Booking.create! (
+  unit: unit,
+  user: test,
+  start_date: "12-12-2023",
+  end_date: "14-12-2023"
+)
