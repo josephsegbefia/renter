@@ -1,9 +1,11 @@
 class UnitsController < ApplicationController
+  before_action :authenticate_user!, only: [ :create, :new]
   before_action :set_shop, only: [:new, :create]
 
   def index
     @units = Unit.all
   end
+
   def new
     @unit = Unit.new
   end
@@ -16,12 +18,11 @@ class UnitsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
-    def show
-      @unit = Unit.find(params[:id])
-    end
   end
-
+  
+  def show
+    @unit = Unit.find(params[:unit_id])
+  end
 
   private
 
