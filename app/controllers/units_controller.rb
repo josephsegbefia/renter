@@ -25,7 +25,8 @@ class UnitsController < ApplicationController
   end
 
   def show
-    @unit = Unit.find(params[:unit_id])
+    @unit = Unit.find(params[:id])
+    authorize @unit
   end
 
   private

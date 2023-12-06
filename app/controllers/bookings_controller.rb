@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @shop = Shop.find(params[:shop_id])
     @unit = Unit.find(params[:unit_id])
     @booking.user = current_user
-    # @booking.shop = @shop
+    @booking.shop_id = @shop.id
     @booking.unit = @unit
     authorize @booking
     if @booking.save

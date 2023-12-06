@@ -21,4 +21,8 @@ class UnitPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    create?
+  end
+
 end
