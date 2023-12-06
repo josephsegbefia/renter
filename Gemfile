@@ -8,7 +8,7 @@ gem "rails", "~> 7.1.2"
 
 gem "stripe"
 
-gem "dotenv-rails"
+#
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

@@ -1,4 +1,5 @@
 class BookingPolicy < ApplicationPolicy
+  include Pundit::Authorization
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
      def resolve
