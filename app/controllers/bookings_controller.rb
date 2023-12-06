@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @shop = Shop.find(params[:shop_id])
     @unit = Unit.find(params[:unit_id])
+    authorize @booking
   end
 
   def create
@@ -13,6 +14,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     # @booking.shop = @shop
     @booking.unit = @unit
+    authorize @booking
     if @booking.save
       redirect_to root_path, notice: "Booking was created successfully"
     else
