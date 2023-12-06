@@ -7,3 +7,12 @@
 <!-- if user.id == current_user, we show this button-->
 
 <button> Add a new unit to your Shop </button>
+
+<h3>Here are all your Units</h3>
+
+
+<%= @units.each do |unit| %>
+  <%= unit.description %>
+<% end %>
+
+@shop.units
