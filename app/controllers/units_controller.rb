@@ -4,22 +4,26 @@ class UnitsController < ApplicationController
 
   def index
     @units = Unit.all
+    @units = policy_scope(Unit)
+    authorize @units
   end
 
   def new
     @unit = Unit.new
+    authorize @unit
   end
 
   def create
     @unit = Unit.new(unit_params)
     @unit.shop = @shop
+    authorize @unit
     if @unit.save
       redirect_to shop_units_path, notice: "Unit added successfully"
     else
       render :new, status: :unprocessable_entity
     end
   end
-  
+
   def show
     @unit = Unit.find(params[:unit_id])
   end
