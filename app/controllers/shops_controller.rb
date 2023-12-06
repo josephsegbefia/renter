@@ -11,6 +11,7 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find(params[:id])
     authorize @shop
+    @units = Unit.all
   end
 
   def create
