@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   resources :shops, only: [:new, :create, :index, :show] do
     resources :units, only: [:index, :new, :create] do
-      resources :bookings, only: [:new, :create]
+      resources :bookings, only: [:new, :create] do
+        get "/pay", to: "bookings#pay", as: :pay
+      end
     end
   end
 

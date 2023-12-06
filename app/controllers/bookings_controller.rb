@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @booking = Booking.new
@@ -16,10 +17,15 @@ class BookingsController < ApplicationController
     @booking.unit = @unit
     authorize @booking
     if @booking.save
-      redirect_to root_path, notice: "Booking was created successfully"
+      redirect_to shop_unit_booking_pay_path(@shop, @unit, @booking), notice: "Booking was created successfully"
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def pay
+    @booking = Booking.find(params[:booking_id])
+    authorize @booking
   end
 
   private
