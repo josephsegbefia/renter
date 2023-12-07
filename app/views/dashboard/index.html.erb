@@ -11,9 +11,36 @@
 
 
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Start your shop
-  </button>
+  <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Start your shop
+    </button>
+  </div>
+
+
+  <div>
+    <div class="row justify-content-center">
+     <div class="col-md-6">
+      <div class="container mt-4">
+        <div class="row justify-content-center">
+          <% if @next_booking %>
+            <div class="innertxt">
+            <h3 class="text-center">Your upcoming rental <i class="fa-solid fa-ship fa-beat"></i></h3>
+                <p>Booking Number: <%= @next_booking.id %></p>
+                <p>Renting: <%= @next_booking.unit.title %></p>
+                <p>Date: <%= @next_booking.start_date %></p>
+                <p>Until: <%= @next_booking.end_date %></p>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <p class="text-center">You have no upcoming bookings</p>
+          <% end %>
+        </div>
+      </div>
+  </div>
+
+
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
