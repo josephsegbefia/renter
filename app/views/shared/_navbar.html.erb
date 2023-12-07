@@ -1,22 +1,21 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag image_path("logo.png") %>
     <% end %>
 
     <% if user_signed_in? %>
-      <li class="nav-item active me-auto">
         <form class="form-inline">
           <div class="md-form my-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
           </div>
         </form>
-      </li>
+
     <%end%>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <button>
+        <button class="button-sign-up">
           <span>Sign-up</span>
         </button>
         <% if user_signed_in? %>
