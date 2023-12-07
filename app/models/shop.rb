@@ -4,4 +4,5 @@ class Shop < ApplicationRecord
   has_many :units
   has_many :bookings, through: :units
   belongs_to :user
+  # validates :user, uniqueness: true
 end

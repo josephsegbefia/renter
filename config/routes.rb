@@ -8,17 +8,19 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :shops, only: [:new, :create, :index, :show] do
-    resources :units, only: [:index, :new, :create, :show] do
+    resources :units, only: [:new, :create, :show] do
       resources :bookings, only: [:index, :new, :create] do
         get "/pay", to: "bookings#pay", as: :pay
       end
-    end
   end
 
   resources :bookings, except: [:new, :create, :show] do
     resources :reviews, only: [:new, :create]
   end
 
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

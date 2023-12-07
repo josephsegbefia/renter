@@ -9,7 +9,9 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @boat = Boat.find(params[:id])
+    @shop = Shop.find(params[:id])
+    authorize @shop
+    @units = Unit.all
   end
 
   def create

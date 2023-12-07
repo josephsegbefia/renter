@@ -11,9 +11,13 @@
     </div>
   <% end %>
 
-  <%= f.input :start_date %>
+  <%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
 
-  <%= f.input :end_date %>
+  <%= f.input :end_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
 
   <div class="actions">
     <%= f.submit %>
