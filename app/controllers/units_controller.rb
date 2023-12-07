@@ -3,7 +3,9 @@ class UnitsController < ApplicationController
   before_action :set_shop, only: [:new, :create]
 
   def index
+    @units = Unit.all
     @units = policy_scope(Unit)
+    authorize @units
   end
 
   def new
@@ -23,7 +25,10 @@ class UnitsController < ApplicationController
   end
 
   def show
-    @unit = Unit.find(params[:unit_id])
+    @shop = Shop.find(params[:shop_id])
+    @unit = Unit.find(params[:id])
+    # @booking = Booking.find(params[:booking_id])
+    authorize @unit
   end
 
   private
