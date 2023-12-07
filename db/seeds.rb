@@ -32,6 +32,8 @@ unit = Unit.create!(
   shop: shop
 )
 
+
+
 booking = Booking.create!(
   unit: unit,
   user: test,
