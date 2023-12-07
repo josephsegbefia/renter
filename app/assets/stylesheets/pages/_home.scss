@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+.wrapper{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.head{
+font-family: monospace;
+font-size: 50px;
+text-align: center;
+color: #F5C53D
+}
