@@ -1,10 +1,12 @@
-<h1>Pay for order <%= @booking.id %> : $<%= @booking.unit.price %></h1>
+<div class = "container">
+  <h1>Pay for order <%= @booking.id %> : $<%= @booking.unit.price %></h1>
 
-<form id = "payment-form" data-controller="checkout" data-stripe-publishable-key="pk_test_51OKJzWDe6YLq2K8ipMsgBKaGwZbOe9jl7hgcJGsBTG4ruh8BQElSWmun2g2YJdltCHtc5HnIXdt2g2t36OJJcZr900vUXkLvoZ" data-stripe-client-secret="<%= @payment_intent_client_secret %>">
-  <div id = "payment-message" class="hidden"></div>
-  <div id = "payment-element"></div>
-  <button id = "submit" class = "btn btn-success mt-3">
-    <div class = "spinner hidden" id = "spinner"></div>
-    <span id = "button-text">Pay now</span>
-  </button>
-</form>
+  <form id = "payment-form" data-controller="checkout" data-stripe-publishable-key="pk_test_51OKJzWDe6YLq2K8ipMsgBKaGwZbOe9jl7hgcJGsBTG4ruh8BQElSWmun2g2YJdltCHtc5HnIXdt2g2t36OJJcZr900vUXkLvoZ" data-stripe-client-secret="<%= @payment_intent_client_secret %>">
+    <div id = "payment-message" class="hidden"></div>
+    <div id = "payment-element"></div>
+    <button id = "submit" class = "btn btn-success mt-3">
+      <div class = "spinner hidden" id = "spinner"></div>
+      <span id = "button-text">Pay now</span>
+    </button>
+  </form>
+</div>
