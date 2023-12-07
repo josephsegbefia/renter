@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="welcome">
-        <h1 class="text-center mb-4 py-3">Welcome, Renter and potential business owner</h1>
+        <h1 class="text-center mb-4 py-3">Welcome <%= @user.first_name %></h1>
       </div>
     </div>
   </div>
@@ -25,11 +25,19 @@
         <div class="row justify-content-center">
           <% if @next_booking %>
             <div class="innertxt">
-            <h3 class="text-center">Your upcoming rental <i class="fa-solid fa-ship fa-beat"></i></h3>
+            <h3 class="text-center">Your upcoming rental</h3>
                 <p>Booking Number: <%= @next_booking.id %></p>
                 <p>Renting: <%= @next_booking.unit.title %></p>
                 <p>Date: <%= @next_booking.start_date %></p>
                 <p>Until: <%= @next_booking.end_date %></p>
+                </div>
+                <div>
+                  <h3>All your bookings</h3>
+                  <% @bookings.each do |booking| %>
+                  <p> <%= booking.unit.title %></p>
+                  <p> Rental period:<%= booking.start_date %> until <%= booking.end_date %></p>
+                  <p>Price: <%= booking.unit.price %></p>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -40,6 +48,9 @@
       </div>
   </div>
 
+  <div>
+
+  </div>
 
 
   <!-- Modal -->
