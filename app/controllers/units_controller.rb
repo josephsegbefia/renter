@@ -8,11 +8,13 @@ class UnitsController < ApplicationController
 
   def new
     @unit = Unit.new
+    authorize @unit
   end
 
   def create
     @unit = Unit.new(unit_params)
     @unit.shop = @shop
+    authorize @unit
     if @unit.save
       redirect_to shop_units_path, notice: "Unit added successfully"
     else
