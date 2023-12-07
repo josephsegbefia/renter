@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :bookings, only: [:index, :new, :create] do
         get "/pay", to: "bookings#pay", as: :pay
       end
+    end
   end
 
   resources :bookings, except: [:new, :create, :show] do
