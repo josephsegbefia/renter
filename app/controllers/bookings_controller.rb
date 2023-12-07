@@ -1,6 +1,11 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
 
+
+  def index
+    @bookings = Booking.all
+    authorize @booking
+  end
   def new
     @booking = Booking.new
     @shop = Shop.find(params[:shop_id])
