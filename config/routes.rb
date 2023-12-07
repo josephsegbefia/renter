@@ -8,12 +8,13 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :shops, only: [:new, :create, :index, :show] do
-    resources :units, only: [:new, :create] do
-      resources :bookings, only: [:new, :create]
-    end
+    resources :units, only: [:new, :create, :show] do
+      resources :bookings, only: [:index, :new, :create] do
+        get "/pay", to: "bookings#pay", as: :pay
+      end
   end
 
-  resources :bookings, except: [:new, :create] do
+  resources :bookings, except: [:new, :create, :show] do
     resources :reviews, only: [:new, :create]
   end
 

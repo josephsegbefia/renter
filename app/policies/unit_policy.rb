@@ -1,8 +1,11 @@
 class UnitPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
+    # def resolve
+    #   scope.all
+    # end
     def resolve
-      scope.all
+      scope.joins(:shop).where(shops: { user: user })
     end
   end
 
@@ -13,4 +16,13 @@ class UnitPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def index?
+    true
+  end
+
+  def show?
+    create?
+  end
+
 end
