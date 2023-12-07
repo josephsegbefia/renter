@@ -1,0 +1,50 @@
+#header {
+    font: Rammetto one;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .content-container {
+    display: flex;
+  }
+  
+  .left-column {
+    width: 50%; 
+    height: 50%;
+    padding-right: 20px;
+  }
+  
+  .right-column {
+    width: 50%; 
+    height: 50%;
+  }
+  
+  .description-container,
+  .welcome-container {
+    padding: 20px;
+    background-color: #F5C53D; 
+    margin-bottom: 20px; 
+  }
+  
+  .welcome-container {
+    background-color: #F5C53D; 
+  }
+  
+  .units-container {
+    background-color: #F5C53D; 
+    display: flex;
+    flex-wrap: wrap;
+    height: 50%;
+  }
+  
+  .unit {
+    border-radius: 50%;
+    background-color: #ccc;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
