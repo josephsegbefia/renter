@@ -46,37 +46,33 @@
       <div class = "card-main">
         <div class="row justify-content-center">
           <% if @next_booking %>
-             <div class="innertxt">
+             <h3 class="innertxt">
                 <h3 class = "text-center">Your upcoming rental</h3>
                 <hr>
-                <span><h3>Booking Number</h3>: <%= @next_booking.id %></span>
-                <h3>Renting: <%= @next_booking.unit.title %></h3>
-                <h3>From: <%= @next_booking.start_date.strftime("%A, %B %e, %Y") %></h3>
-                <h3>To: <%= @next_booking.end_date.strftime("%A, %B %e, %Y") %></h3>
+                <p>Booking Number</p>: <%= @next_booking.id %></h3>
+                <p>Renting: <%= @next_booking.unit.title %></p>
+                <p>From: <%= @next_booking.start_date.strftime("%A, %B %e, %Y") %></p>
+                <p>To: <%= @next_booking.end_date.strftime("%A, %B %e, %Y") %></p>
               </div>
             <% end %>
         </div>
       </div>
-    </div>
 
-    <div class = "column-main">
-      <div class = "card-main">
-        <h3>Past Bookings</h3>
-        <hr>
 
-        <% @bookings.each do |booking| %>
-          <p> <%= booking.unit.title %></p>
-          <p> Rental period:<%= booking.start_date.strftime("%A, %B %e, %Y") %> until <%= booking.end_date.strftime("%A, %B %e, %Y") %>
-          <p>Price: <%= booking.unit.price %></p>
+      <div class = "column-main">
+        <div class = "card-main">
+          <h3>Past Bookings</h3>
           <hr>
-        <% end %>
+          <% @bookings.each do |booking| %>
+            <h3> <%= booking.unit.title %></h3>
+            <p> Period:<%= booking.start_date.strftime("%A, %B %e, %Y") %> until <%= booking.end_date.strftime("%A, %B %e, %Y") %></p>
+            <p>Price: <%= booking.unit.price %></p>
+            <hr>
+          <% end %>
+        </div>
       </div>
     </div>
-
   </div>
-
-
-
 </div>
 
 
