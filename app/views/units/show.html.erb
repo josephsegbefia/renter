@@ -1,4 +1,19 @@
-<h1>You are viewing...<%= @unit.description.truncate(20)%></h1>
+<head>
+  <%= stylesheet_link_tag 'styles' %>
+  <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet">
+</head>
+
+<div class="unit-card">
+  <h1>Unit Details</h1>
+  <div class="unit-details">
+    <h2><%= @unit.title %></h2>
+    <p>Description: <%= @unit.description %></p>
+    <div id="shopcard">
+    <%= link_to "Back", shop_units_path()%>
+    <%= link_to @shop.title, shop_units_path() %>
+    </div>
+  </div>
+</div>
 
 <%= link_to "Back", units_path %>
 
