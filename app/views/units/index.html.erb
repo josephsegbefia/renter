@@ -9,19 +9,14 @@
   </div>
   <% end %>
 
-
-
-
-
-
-<ol>
-  <% @units.each do |unit| %>
-    <li><%= unit.price %></li>
-    <li><%= unit.description %></li>
-    <%# <li><%= unit.shop.title %></li>
-   <%= link_to 'Book this unit', new_shop_unit_booking_path(unit.shop, unit) %>
-   <%= link_to "View this unit", shop_unit_path(unit.shop, unit)%>
-  <% end %>
-</ol>
-
+  <div class = "row">
+    <% @units.each do |unit| %>
+      <div class = "column">
+        <div class = "card">
+          <h6><%= unit.description %></h6>
+          <p><%= unit.price%></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
