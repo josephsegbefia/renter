@@ -80,6 +80,9 @@ unit1 = Unit.create!(
   title: "Surfboard 75Z",
   shop: shop1
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701990157/development/j8yjn2ax81kcj32ekyv3qxo1q8su.jpg")
+unit1.photo.attach(io: file, filename: "surfboard.png", content_type: "image/png")
+unit1.save
 
 
 unit2 = Unit.create!(
@@ -89,6 +92,11 @@ unit2 = Unit.create!(
   title: "Surfboard Hamilton",
   shop: shop1
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701990155/development/fva0vngrhcv8l6zdyz94qr6bkqlr.jpg")
+unit2.photo.attach(io: file, filename: "surfboard.png", content_type: "image/png")
+unit2.save
+
+
 unit3 = Unit.create!(
   price: 100,
   description: "The original Surfboard of Brody",
@@ -96,6 +104,9 @@ unit3 = Unit.create!(
   title: "Surfboard Brody",
   shop: shop1
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701990153/development/5e6df37fc4qhh5d6enhgux26gc5q.jpg")
+unit3.photo.attach(io: file, filename: "surfboard.png", content_type: "image/png")
+unit3.save
 
 
 unit4 = Unit.create!(
@@ -105,6 +116,10 @@ unit4 = Unit.create!(
   title: "Kayak 75Z",
   shop: shop2
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/Kayak_on_a_gentle_river_casual_1_yqqrcc.jpg")
+unit4.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
+unit4.save
+
 unit5 = Unit.create!(
   price: 100,
   description: "The original Kayak of Matt Olympia",
@@ -112,6 +127,10 @@ unit5 = Unit.create!(
   title: "Kayak 75Z",
   shop: shop2
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/a_blue_kayak_on_a_kayak_stand__eq5yvp.jpg")
+unit5.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
+unit5.save
+
 unit6 = Unit.create!(
   price: 100,
   description: "The original Kayak of Matt Olympia",
@@ -119,7 +138,9 @@ unit6 = Unit.create!(
   title: "Kayak 75Z",
   shop: shop2
 )
-
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/a_blue_kayak_on_a_kayak_stand__4_am0lbj.jpg")
+unit4.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
+unit4.save
 
 
 unit7 = Unit.create!(
@@ -129,6 +150,10 @@ unit7 = Unit.create!(
   title: "Bike 75Z",
   shop: shop3
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/Bicycle_on_a_street_casual_pho_2_v7l6zw.jpg")
+unit7.photo.attach(io: file, filename: "Bike.png", content_type: "image/png")
+unit7.save
+
 
 unit8 = Unit.create!(
   price: 100,
@@ -137,6 +162,9 @@ unit8 = Unit.create!(
   title: "Bike brodius",
   shop: shop3
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/Bicycle_on_a_street_casual_pho_1_zgynpl.jpg")
+unit8.photo.attach(io: file, filename: "Bike.png", content_type: "image/png")
+unit8.save
 
 unit9 = Unit.create!(
   price: 100,
@@ -145,6 +173,9 @@ unit9 = Unit.create!(
   title: "Bike Elena",
   shop: shop3
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/Bicycle_on_a_street_casual_pho_vz7k4c.jpg")
+unit9.photo.attach(io: file, filename: "Bike.png", content_type: "image/png")
+unit9.save
 
 
 unit10 = Unit.create!(
@@ -154,6 +185,9 @@ unit10 = Unit.create!(
   title: "Tent 75Z",
   shop: shop4
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964664/red_Tent_on_green_grass_casual_ip6ouo.jpg")
+unit10.photo.attach(io: file, filename: "Bike.png", content_type: "image/png")
+unit10.save
 
 unit11 = Unit.create!(
   price: 100,
@@ -162,6 +196,9 @@ unit11 = Unit.create!(
   title: "Tent Elena",
   shop: shop4
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964664/Tent_on_green_grass_casual_pho_bt3nnc.jpg")
+unit11.photo.attach(io: file, filename: "Bike.png", content_type: "image/png")
+unit11.save
 
 unit12 = Unit.create!(
   price: 100,
@@ -170,6 +207,9 @@ unit12 = Unit.create!(
   title: "Tent Bear Grylls",
   shop: shop4
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/red_Tent_on_green_grass_casual_1_c0qykn.jpg")
+unit12.photo.attach(io: file, filename: "Bike.png", content_type: "image/png")
+unit12.save
 
 
 booking1 = Booking.create!(
@@ -220,6 +260,8 @@ unit = Unit.create!(
   available: true,
   shop: shop
 )
+
+
 
 booking = Booking.create!(
   unit: unit,
