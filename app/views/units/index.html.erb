@@ -18,7 +18,7 @@
             <%= unit.description%>
             </p>
           <p>Price <%= unit.price %></p>
-          <%= unit.photo %>
+          <%= cl_image_tag(unit.photo.key, width: 300, height: 300, crop: :fill) %>
         </div>
       </div>
     <% end %>
