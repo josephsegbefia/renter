@@ -80,6 +80,9 @@ unit1 = Unit.create!(
   title: "Surfboard 75Z",
   shop: shop1
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964664/surfboard_standing_in_the_sand_2_v7ro2y.jpg")
+unit1.photo.attach(io: file, filename: "surfboard.png", content_type: "image/png")
+unit1.save
 
 
 unit2 = Unit.create!(
@@ -89,6 +92,11 @@ unit2 = Unit.create!(
   title: "Surfboard Hamilton",
   shop: shop1
 )
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964664/surfboard_standing_in_the_sand_2_v7ro2y.jpg")
+unit2.photo.attach(io: file, filename: "surfboard.png", content_type: "image/png")
+unit2.save
+
+
 unit3 = Unit.create!(
   price: 100,
   description: "The original Surfboard of Brody",
