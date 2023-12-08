@@ -9,20 +9,39 @@
   </div>
   <% end %>
 
-  <div class = "row">
+  <!--div class = "row">
     <% @units.each do |unit| %>
       <div class = "column">
         <div class = "card">
-          <%= image_tag("logo.png", alt: "Logo", class: "card-img") %>
+          <%= cl_image_tag(unit.photo.key, class: "card-img") %>
           <div class = "card-text-content">
-            <h6><%= unit.description %></h6>
-          <p><%= unit.price%></p>
-          </div>
+          <h6><%= unit.title %></h6>
+          <p> Description:
+            <%= unit.description%>
+            </p>
+          <p>Price <%= unit.price %></p>
+        </div>
+      </div>
+    <% end %>
+  </div> -->
 
+
+<div class = "row">
+    <% @units.each do |unit| %>
+      <div class = "column">
+        <div class = "card">
+          <%= cl_image_tag(unit.photo.key, class: "card-img") %>
+          <div class = "card-text-content">
+            <h6><%= unit.title %></h6>
+            <p> <%= unit.description %></p>
+          <p> $<%= unit.price%></p>
+          <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit) %>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
+
 
   <%= link_to "Dashboard", dashboard_path, class: "btn-flat btn-dashboard"%>
 </div>

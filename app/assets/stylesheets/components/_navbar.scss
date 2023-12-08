@@ -372,7 +372,7 @@ button {
 
 button:hover {
   border: 1px solid #f3b182;
-  background: linear-gradient(85deg, #FEC195, #fcc196, #fabd92, #fac097, #fac39c);
+  background: linear-gradient(85deg, #F5C53D, #F5C53D, #F5C53D, #F5C53D, #F5C53D);
   animation: wind 2s ease-in-out infinite;
 }
 
@@ -445,4 +445,14 @@ button:hover {
 
 .button-sign-up:hover::before {
   transform: translate3d(100%, 0, 0);
+}
+
+.signup_button {
+text-decoration: none;
+color: white;
+z-index: 1;
+position: relative;
+}
+
+.signup_button:hover {
 }

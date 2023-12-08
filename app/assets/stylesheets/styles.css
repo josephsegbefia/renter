@@ -1,5 +1,4 @@
 #header {
-    font: Rammetto one;
     text-align: center;
     padding: 20px 0;
   }
@@ -12,6 +11,10 @@
     width: 50%; 
     height: 50%;
     padding-right: 20px;
+  }
+
+  body {
+    font-family: Rammetto one;
   }
   
   .right-column {
@@ -40,11 +43,44 @@
   .unit {
     border-radius: 50%;
     background-color: #ccc;
-    padding: 20px;
-    width: 100px;
-    height: 100px;
+    padding: 50px;
+    width: 200px;
+    height: 200px;
     margin: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .unit-card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #F5C53D;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .unit-details {
+    margin-top: 20px;
+  }
+  
+  .unit-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .unit-details p {
+    font-size: 18px;
+    color: #333;
+  }
+
+  #shopcard {
+    width: 50%;
+    height: 50%;
+    background-color: grey;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
