@@ -13,8 +13,12 @@
     <% @units.each do |unit| %>
       <div class = "column">
         <div class = "card">
-          <h6><%= unit.description %></h6>
-          <p><%= unit.price%></p>
+          <h6><%= unit.title %></h6>
+          <p> Description:
+            <%= unit.description%>
+            </p>
+          <p>Price <%= unit.price %></p>
+          <%= unit.photo %>
         </div>
       </div>
     <% end %>
