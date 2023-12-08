@@ -49,10 +49,10 @@
              <div class="innertxt">
                 <h3 class = "text-center">Your upcoming rental</h3>
                 <hr>
-                <h4>Booking Number: <%= @next_booking.id %></h4>
-                <h4>Renting: <%= @next_booking.unit.title %></h4>
-                <h4>From: <%= @next_booking.start_date.strftime("%A, %B %e, %Y") %></h4>
-                <h4>To: <%= @next_booking.end_date.strftime("%A, %B %e, %Y") %></h4>
+                <span><h3>Booking Number</h3>: <%= @next_booking.id %></span>
+                <h3>Renting: <%= @next_booking.unit.title %></h3>
+                <h3>From: <%= @next_booking.start_date.strftime("%A, %B %e, %Y") %></h3>
+                <h3>To: <%= @next_booking.end_date.strftime("%A, %B %e, %Y") %></h3>
               </div>
             <% end %>
         </div>
@@ -63,6 +63,13 @@
       <div class = "card-main">
         <h3>Past Bookings</h3>
         <hr>
+
+        <% @bookings.each do |booking| %>
+          <p> <%= booking.unit.title %></p>
+          <p> Rental period:<%= booking.start_date.strftime("%A, %B %e, %Y") %> until <%= booking.end_date.strftime("%A, %B %e, %Y") %>
+          <p>Price: <%= booking.unit.price %></p>
+          <hr>
+        <% end %>
       </div>
     </div>
 
