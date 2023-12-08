@@ -11,10 +11,9 @@
     <div id="shopcard">
     <%= link_to "Back", shop_units_path()%>
     <%= link_to @shop.title, shop_units_path() %>
+    <%= link_to "Book now", new_shop_unit_booking_path(@unit.shop, unit) %>
     </div>
   </div>
 </div>
 
 <%= link_to "Back", units_path %>
-
-<%# shop_unit_booking_pay_path(@shop, @unit, @booking) %>
