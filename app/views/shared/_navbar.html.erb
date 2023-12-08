@@ -15,9 +15,11 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <button class="button-sign-up">
-          <span>Sign-up</span>
-        </button>
+        <% if !current_user %>
+          <button class="button-sign-up">
+            <span>Sign-up</span>
+          </button>
+        <% end %>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
