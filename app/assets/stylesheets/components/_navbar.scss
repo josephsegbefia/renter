@@ -74,7 +74,7 @@
   left: 0;
   width: 10px;
   height: 10px;
-  background: rgb(44, 143, 255);
+  background: black;
   border-radius: 50%;
   -webkit-animation: ball624 4s infinite;
   animation: ball624 4s infinite;
@@ -394,7 +394,7 @@ button:hover {
 
 
 
-button {
+.button-sign-up {
   outline: none;
   cursor: pointer;
   border: none;
@@ -415,17 +415,17 @@ button {
 
 }
 
-button span {
+.button-sign-up span {
   position: relative;
   z-index: 10;
   transition: color 0.4s;
 }
 
-button:hover span {
+.button-sign-up:hover span {
   color: black;
 }
-button::before,
- button::after {
+.button-sign-up::before,
+  .button-sign-up::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -434,7 +434,7 @@ button::before,
   z-index: 0;
 }
 
-button::before {
+.button-sign-up::before {
   content: "";
   background: #000;
   width: 120%;
@@ -443,6 +443,6 @@ button::before {
   transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
-button:hover::before {
+.button-sign-up:hover::before {
   transform: translate3d(100%, 0, 0);
 }
