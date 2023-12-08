@@ -1,5 +1,4 @@
 #header {
-    font: Rammetto one;
     text-align: center;
     padding: 20px 0;
   }
@@ -12,6 +11,10 @@
     width: 50%; 
     height: 50%;
     padding-right: 20px;
+  }
+
+  body {
+    font-family: Rammetto one;
   }
   
   .right-column {
@@ -40,9 +43,9 @@
   .unit {
     border-radius: 50%;
     background-color: #ccc;
-    padding: 20px;
-    width: 100px;
-    height: 100px;
+    padding: 50px;
+    width: 200px;
+    height: 200px;
     margin: 10px;
     display: flex;
     align-items: center;
