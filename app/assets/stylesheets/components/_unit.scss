@@ -62,6 +62,8 @@
   float: left;
   width: 25%;
   padding: 0 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .row {
@@ -77,17 +79,32 @@
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
-  text-align: center;
+  padding: 3px;
+  // text-align: center;
   background-color: #F5C53D;
   color: white;
-  height: 85%;
+  height: auto;
+  overflow: none;
+  border-radius: 4px;
 }
 
+.card-img {
+  border-radius: 4px;
+}
+
+.card-text-content {
+  padding: 16px;
+}
+
+h6{
+  font-family: $headers-font;
+}
 @media screen and (max-width: 600px) {
   .column {
-    width: 100%;
+    width: 90%;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
+
+
 }

@@ -1,56 +1,131 @@
+<div class = "container">
+  <div class = "welcome-header">
+    <p class = "welcome">Welcome <%= @user.first_name %></p><br><p>have a quick look at your activities!</p>
+  </div>
 
+  <div class = "row">
+    <div class = "column">
+      <div class = "card">
+        <h3><%= Date.today.strftime("%A, %B %e, %Y") %></h3>
+        <hr>
+        <% booking_count = @user.bookings.count %>
+        <% if booking_count > 1 %>
+          <p>You have made <%= booking_count %> bookings so far!</p>
+        <% elsif%>
+          <p>You have made only <%= booking_count %> booking so far!</p>
+        <% else %>
+          <p>You have made no bookings yet</p>
+        <% end %>
+
+      </div>
+    </div>
+    <div class = "column">
+      <div class = "card">
+        <h3>Total Revenue</h3>
+        <hr>
+        <p>$0</p>
+      </div>
+    </div>
+
+    <div class = "column">
+      <div class = "card">
+        <h3>Your Shops</h3>
+        <hr>
+        <% shop_count = @user.shops.count %>
+        <% if shop_count > 1 %>
+          <p>You have </p><%= shop_count %> shops on our platform!
+        <% else %>
+          <p>You have no shops here yet!</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class = "row-main">
+    <div class = "column-main">
+      <div class = "card-main">
+        <div class="row justify-content-center">
+          <% if @next_booking %>
+             <div class="innertxt">
+                <h3 class = "text-center">Your upcoming rental</h3>
+                <hr>
+                <h4>Booking Number: <%= @next_booking.id %></h4>
+                <h4>Renting: <%= @next_booking.unit.title %></h4>
+                <h4>From: <%= @next_booking.start_date.strftime("%A, %B %e, %Y") %></h4>
+                <h4>To: <%= @next_booking.end_date.strftime("%A, %B %e, %Y") %></h4>
+              </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class = "column-main">
+      <div class = "card-main">
+        <h3>Past Bookings</h3>
+        <hr>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+
+
+<%#
 
 <div class="container mt-4 position-relative">
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="welcome">
-        <h1 class="text-center mb-4 py-3">Welcome <%= @user.first_name %></h1>
-      </div>
+        <h3 class="text-center mb-4 py-3">Welcome <%= @user.first_name %></h3>
+      <%# </div>
     </div>
-  </div>
+  </div> %>
 
 
   <!-- Button trigger modal -->
-  <div class="d-flex justify-content-center">
+  <%# <div class="d-flex justify-content-center">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       Start your shop
     </button>
-  </div>
+  </div> %>
 
 
-  <div>
-    <div class="row justify-content-center">
-     <div class="col-md-6">
-      <div class="container mt-4">
-        <div class="row justify-content-center">
-          <% if @next_booking %>
-            <div class="innertxt">
-            <h3 class="text-center">Your upcoming rental</h3>
-                <p>Booking Number: <%= @next_booking.id %></p>
-                <p>Renting: <%= @next_booking.unit.title %></p>
-                <p>Date: <%= @next_booking.start_date %></p>
-                <p>Until: <%= @next_booking.end_date %></p>
-                </div>
-                <div>
-                  <h3>All your bookings</h3>
-                  <% @bookings.each do |booking| %>
-                  <p> <%= booking.unit.title %></p>
-                  <p> Rental period:<%= booking.start_date %> until <%= booking.end_date %></p>
-                  <p>Price: <%= booking.unit.price %></p>
-                  <% end %>
-                </div>
+  <%# <div> %>
+    <%# <div class="row justify-content-center"> %>
+     <%# <div class="col-md-6"> %>
+      <%# <div class="container mt-4"> %>
+        <%# <div class="row justify-content-center"> %>
+          <%# if @next_booking %>
+            <%# <div class="innertxt"> %>
+            <%# <h3 class="text-center">Your upcoming rental</h3> %>
+                <%# <>Booking Number: <%= @next_booking.id %>
+                <%# <>Renting: <%= @next_booking.unit.title %>
+                <%# <>Date: <%= @next_booking.start_date %>
+                <%# <>Until: <%= @next_booking.end_date %>
+                <%# </div> %>
+                <%# <div> %>
+                  <%# <h3>All your bookings</h3> %>
+                  <%# @bookings.each do |booking| %>
+                  <%# <p> = booking.unit.title</p> %>
+                  <%#<p> Rental period:<%#= booking.start_date %> <%#until <%#= booking.end_date %>
+                  <%#<p>Price: <%#= booking.unit.price </p> %>
+                  <%# end %>
+                <%# </div>
               </div>
-            </div>
-          <% else %>
-            <p class="text-center">You have no upcoming bookings</p>
-          <% end %>
-        </div>
-      </div>
-  </div>
+            </div> %>
+          <%# <% else %>
+            <%# <p class="text-center">You have no upcoming bookings</p> %>
+          <%# <% end %>
+        <%# </div> %>
+      <%# </div> %>
+  <%# </div> %>
 
-  <div>
-
-  </div>
+  <%# <div>
+  </div> %>
 
 
   <!-- Modal -->
