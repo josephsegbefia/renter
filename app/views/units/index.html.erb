@@ -13,34 +13,25 @@
     </div>
   </div>
 
-  <!--div class = "row">
-    <% @units.each do |unit| %>
-      <div class = "column">
-        <div class = "card">
-          <%= cl_image_tag(unit.photo.key, class: "card-img") %>
-          <div class = "card-text-content">
-          <h6><%= unit.title %></h6>
-          <p> Description:
-            <%= unit.description%>
-            </p>
-          <p>Price <%= unit.price %></p>
-        </div>
-      </div>
-    <% end %>
-  </div> -->
+
 
 
 <div class = "row">
     <% @units.each do |unit| %>
       <div class = "column">
         <div class = "card">
-          <%= cl_image_tag(unit.photo.key, class: "card-img") %>
-          <div class = "card-text-content">
-            <h6><%= unit.title %></h6>
-            <p> <%= unit.description %></p>
-          <p> $<%= unit.price%></p>
-          <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit) %>
-          </div>
+          <!-- Just making sure I see the units. It can be removed later-->
+           <% if unit.photo.attached? %>
+              <%= cl_image_tag(unit.photo.key, class: "card-img") %>
+            <% end %>
+            <div class="card-text-content">
+              <h6><%= unit.title %></h6>
+              <p><%= unit.description %></p>
+              <p>$<%= unit.price %></p>
+            <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit), class: "book-now" %>
+            </div>
+
+
         </div>
       </div>
     <% end %>
