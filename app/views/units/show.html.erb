@@ -6,6 +6,7 @@
 <div class="unit-card">
   <h1>Unit Details</h1>
   <div class="unit-details">
+    <%= cl_image_tag(@unit.photo.key, class: "card-img") %>
     <h2><%= @unit.title %></h2>
     <p>Description: <%= @unit.description %></p>
     <div id="shopcard">
@@ -16,10 +17,21 @@
   </div>
 </div>
 
-<div>
-  <%= month_calendar do |date| %>
-  <%= date %>
+<div class ="mt-4">
+  <h2 class="text-center"> Check Availability </h2>
+  <div>
+    <%= month_calendar(events: @bookings, attribute: :start_date, end_attribute: :end_date) do |date, bookings| %>
+    <%= date %>
+    <% bookings.each do |booking| %>
+    <div class="bookingcard">
+
+      <p>Booked by: <%= booking.user.first_name %></p>
+    </div>
+    <% end %>
   <% end %>
+  </div>
 </div>
+
+
 
 <%= link_to "Back", units_path %>
