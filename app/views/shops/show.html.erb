@@ -1,16 +1,40 @@
-<h1>Welcome to the Shop SHOW page!</h1>
 
+<head>
+  <%= stylesheet_link_tag 'styles' %>
+  <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet">
+</head>
 
+<div id="header">
+  <h1><%= @shop.title %></h1>
+</div>
 
+<div class="content-container">
+  <div class="left-column">
+    <div class="description-container">
+      <p><%= @shop.description %></p>
+      <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+      <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+      <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+    </div>
 
+    <div class="welcome-container">
+      <h2>Welcome Message</h2>
+      <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+      <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+      <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+      <% if current_user && current_user.id == @shop.user_id %>
+        <%= button_to "Add a new unit to your Shop", new_unit_path, method: :get %>
+      <% end %>
+    </div>
+  </div>
 
-<!-- if user.id == current_user, we show this button-->
-
-<button> Add a new unit to your Shop </button>
-
-<h3>Here are all your Units</h3>
-
-
-<% @units.each do |unit| %>
-  <%= unit.description %>
-<% end %>
+  <div class="right-column">
+    <div class="units-container">
+      <% @units.each do |unit| %>
+        <div class="unit">
+          <%= unit.description %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

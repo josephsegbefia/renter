@@ -1,2 +1,37 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="page-container">
+  <div class="head">
+   <h1>SimpleRent</h1>
+  </div>
+
+
+  <% unless signed_in? %>
+    <div class="intro">
+      <p>INTRODUCING SimpleRent</p>
+      <h4>Explore the world of SimpleRent</h4>
+    </div>
+  <%end%>
+
+  <% if signed_in? %>
+    <div class="home_intro">
+      <p>INTRODUCING SimpleRent</p>
+      <h4>Explore the world of SimpleRent</h4>
+    </div>
+  <%end%>
+
+
+ <% unless signed_in? %>
+    <div class="input-container">
+      <input type="text" placeholder="Search">
+    </div>
+  <%end%>
+
+
+
+  <%= link_to units_path, class: "arrow" do %>
+      <%= image_tag image_path("right_arrow.png") %>
+    <% end %>
+
+
+
+</div>

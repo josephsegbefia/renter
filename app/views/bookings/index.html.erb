@@ -1,0 +1,7 @@
+<h1>Bookings</h1>
+
+<% if params['redirect_status'] == 'succeeded' %>
+  <div class = 'alert alert-success'>Payment successful</div>
+<% elsif params['redirect_status'] == 'failed' %>
+  <div class = 'alert alert-danger'>Payment failed.Please try again.</div>
+<% end %>
