@@ -1,6 +1,6 @@
 <div class = "container">
   <div class = "welcome-header">
-    <p class = "welcome">Welcome <%= @user.first_name %></p><br><p>have a quick look at your activities!</p>
+    <p class = "welcome">Welcome <%= @user.first_name %>,</p><br><p>have a quick look at your activities!</p>
   </div>
 
   <div class = "row">
@@ -63,6 +63,12 @@
       <div class = "card-main">
         <h3>Past Bookings</h3>
         <hr>
+        <% @bookings.each do |booking| %>
+          <p><%= booking.unit.title %></p>
+          <p>Start: <%= booking.start_date.strftime("%A, %B %e, %Y") %></p>
+          <p>End: <%= booking.end_date.strftime("%A, %B %e, %Y") %></p>
+          <p>Amount spent: <%= booking.unit.price  %></p>
+        <% end %>
       </div>
     </div>
 
