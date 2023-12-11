@@ -4,14 +4,14 @@
       <%= image_tag image_path("logo.png") %>
     <% end %>
 
-    <% if user_signed_in? %>
-      <form class="form-inline">
+    <%# if user_signed_in? %>
+      <%# <form class="form-inline">
         <div class="md-form my-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
         </div>
-      </form>
+      </form> %>
 
-    <%end%>
+    <%#end%>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
@@ -23,7 +23,7 @@
 
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="/dashboard" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="loader">
               <div class="loader__bar"></div>
               <div class="loader__bar"></div>
