@@ -4,6 +4,8 @@
 
 .header-text {
   text-align: center;
+  font-family: "Rammetto One";
+  font-size: 20px;
 }
 
 .container {
@@ -38,9 +40,11 @@
 }
 
 .btn-flat {
-  color: white;
+  color: black;
   padding: 8px 24px;
   border-radius: 4px;
+  font-family: "Rammetto One";
+  font-size: 10px;
   border: none;
   background: #F5C53D;
   transition: background 0.3s ease;
@@ -53,9 +57,9 @@
 }
 
 .btn-flat:hover {
-  background: white;
+  background: black;
   color: #F5C53D;
-  border:1px solid#F5C53D ;
+  // border:1px solid#F5C53D ;
 }
 
 .column {
@@ -97,12 +101,32 @@
 }
 
 h6{
-  font-family: $headers-font;
+  font-family: "Rammetto One";
+  font-size: 12px;
+  color: black
 }
 
+p {
+  color: #666362;
+  font-family: "Rammetto One";
+  font-size: 10px;
+}
 .book-now {
   text-decoration: none;
   color: black;
+  font-family: "Rammetto One";
+  font-size: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+  background: none;
+  padding: 5px;
+}
+
+.book-now:hover {
+  background-color: black;
+  border: none;
+  color: #F5C53D;
+  border-radius: 3px;
 }
 @media screen and (max-width: 600px) {
   .column {
