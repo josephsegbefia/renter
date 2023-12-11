@@ -1,6 +1,6 @@
 <div class = "container">
   <div class = "welcome-header">
-    <p class = "welcome">Welcome <%= @user.first_name %>,</p><br><p>have a quick look at your activities!</p>
+    <p class = "welcome">Welcome <%= @user.first_name %>,</p><br><p class = "card-text">have a quick look at your activities!</p>
   </div>
 
   <div class = "row">
@@ -10,11 +10,11 @@
         <hr>
         <% booking_count = @user.bookings.count %>
         <% if booking_count > 1 %>
-          <p>You have made <%= booking_count %> bookings so far!</p>
+          <p class = "card-text">You have made <%= booking_count %> bookings so far!</p>
         <% elsif%>
-          <p>You have made only <%= booking_count %> booking so far!</p>
+          <p class = "card-text">You have made only <%= booking_count %> booking so far!</p>
         <% else %>
-          <p>You have made no bookings yet</p>
+          <p class = "card-text">You have made no bookings yet</p>
         <% end %>
 
       </div>
@@ -23,7 +23,7 @@
       <div class = "card">
         <h3>Total Revenue</h3>
         <hr>
-        <p>$1250</p>
+        <p class = "card-text">$1250</p>
       </div>
     </div>
 
@@ -33,9 +33,9 @@
         <hr>
         <% shop_count = @user.shops.count %>
         <% if shop_count > 1 %>
-          <p>You have </p><%= shop_count %> shops on our platform!
+          <p class = "card-text d-inline">You have <%= shop_count %> shops on our platform!</p>
         <% else %>
-          <p>You have no shops here yet!</p>
+          <p class = "card-text">You have no shops here yet!</p>
         <% end %>
       </div>
     </div>
@@ -44,37 +44,51 @@
   <div class = "row-main">
     <div class = "column-main">
       <div class = "card-main">
-        <div class="row justify-content-center">
           <% if @next_booking %>
              <div class="innertxt">
                 <h3 class = "text-center">Your upcoming rental</h3>
                 <hr>
-                <h4>Booking Number: <%= @next_booking.id %></h4>
-                <h4>Renting: <%= @next_booking.unit.title %></h4>
-                <h4>From: <%= @next_booking.start_date.strftime("%A, %B %e, %Y") %></h4>
-                <h4>To: <%= @next_booking.end_date.strftime("%A, %B %e, %Y") %></h4>
+                <div>
+                  <h3 class = "d-inline">Booking Number:</h3> <p class = "card-text d-inline"><%= @next_booking.id %></p>
+                </div>
+                <div>
+                  <h3 class = "d-inline">Renting:</h3> <p class = "card-text d-inline"><%= @next_booking.unit.title %></p>
+                </div>
+                <div>
+                  <h3 class = "d-inline">Start:</h3> <p class = "card-text d-inline"><%= @next_booking.start_date.strftime("%A, %B %e, %Y") %></p>
+                </div>
+                <div>
+                  <h3 class = "d-inline">End:</h3> <p class = "card-text d-inline"><%= @next_booking.end_date.strftime("%A, %B %e, %Y") %></p>
+                </div>
               </div>
             <% end %>
-        </div>
       </div>
     </div>
 
     <div class = "column-main">
       <div class = "card-main">
-        <h3>Past Bookings</h3>
+        <h3 class = "text-center">Past Bookings</h3>
         <hr>
         <% @bookings.each do |booking| %>
-          <p><%= booking.unit.title %></p>
-          <p>Start: <%= booking.start_date.strftime("%A, %B %e, %Y") %></p>
-          <p>End: <%= booking.end_date.strftime("%A, %B %e, %Y") %></p>
-          <p>Amount spent: <%= booking.unit.price  %></p>
+          <div>
+            <h3 class = "d-inline">Rented:</h3><p class = "card-text d-inline"><%= booking.unit.title %></p>
+          </div>
+          <div>
+            <h3 class = "d-inline">Start:</h3><p class = "card-text d-inline"><%= booking.start_date.strftime("%A, %B %e, %Y") %></p>
+          </div>
+          <div>
+            <h3 class = "d-inline">End:</h3> <p class = "card-text d-inline"><%= booking.end_date.strftime("%A, %B %e, %Y") %></p>
+          </div>
+          <div>
+            <h3 class = "d-inline">Amount spent:</h3> <p class = "card-text d-inline"><%= booking.unit.price  %></p>
+          </div>
+
         <% end %>
       </div>
     </div>
 
+
   </div>
-
-
 
 </div>
 
@@ -94,10 +108,11 @@
 
   <!-- Button trigger modal -->
   <div class="d-flex justify-content-center">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="shop-create-button" data-toggle="modal" data-target="#exampleModal">
       Start your shop
     </button>
   </div>
+
 
 
   <%# <div> %>
