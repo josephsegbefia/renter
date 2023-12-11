@@ -46,33 +46,41 @@
       <div class = "card-main">
         <div class="row justify-content-center">
           <% if @next_booking %>
-             <div class="innertxt">
+             <h3 class="innertxt">
                 <h3 class = "text-center">Your upcoming rental</h3>
                 <hr>
-                <h4>Booking Number: <%= @next_booking.id %></h4>
-                <h4>Renting: <%= @next_booking.unit.title %></h4>
-                <h4>From: <%= @next_booking.start_date.strftime("%A, %B %e, %Y") %></h4>
-                <h4>To: <%= @next_booking.end_date.strftime("%A, %B %e, %Y") %></h4>
+                <p>Booking Number</p>: <%= @next_booking.id %></h3>
+                <p>Renting: <%= @next_booking.unit.title %></p>
+                <p>From: <%= @next_booking.start_date.strftime("%A, %B %e, %Y") %></p>
+                <p>To: <%= @next_booking.end_date.strftime("%A, %B %e, %Y") %></p>
               </div>
             <% end %>
         </div>
       </div>
-    </div>
 
-    <div class = "column-main">
-      <div class = "card-main">
-        <h3>Past Bookings</h3>
-        <hr>
+
+      <div class = "column-main">
+        <div class = "card-main">
+          <h3>Past Bookings</h3>
+          <hr>
+          <% @bookings.each do |booking| %>
+            <h3> <%= booking.unit.title %></h3>
+            <p> Period:<%= booking.start_date.strftime("%A, %B %e, %Y") %> until <%= booking.end_date.strftime("%A, %B %e, %Y") %></p>
+            <p>Price: <%= booking.unit.price %></p>
+            <hr>
+          <% end %>
+        </div>
       </div>
     </div>
-
   </div>
-
-
-
 </div>
 
-
+ <!-- Button trigger modal -->
+  <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Start your shop
+    </button>
+  </div>
 
 <%#
 
@@ -84,6 +92,7 @@
       <%# </div>
     </div>
   </div> %>
+
 
 
   <!-- Button trigger modal -->
