@@ -23,7 +23,7 @@
             <div class="card-text-content">
               <h6><%= unit.title %></h6>
               <p><%= unit.description %></p>
-              <p>$<%= unit.price %></p>
+              <p class = "mb-3">$<%= unit.price %></p>
             <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit), class: "book-now" %>
             </div>
 
@@ -34,5 +34,5 @@
   </div>
 
 
-  <%= link_to "Dashboard", dashboard_path, class: "btn-flat btn-dashboard"%>
+  <%= link_to "View Your Dashboard", dashboard_path, class: "btn-flat btn-dashboard"%>
 </div>
