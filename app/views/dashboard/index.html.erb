@@ -45,9 +45,10 @@
     <div class = "column-main">
       <div class = "card-main">
           <% if @next_booking %>
-             <div class="innertxt">
+             <h3 class="innertxt">
                 <h3 class = "text-center">Your upcoming rental</h3>
                 <hr>
+
                 <div>
                   <h3 class = "d-inline">Booking Number:</h3> <p class = "card-text d-inline"><%= @next_booking.id %></p>
                 </div>
@@ -63,7 +64,7 @@
               </div>
             <% end %>
       </div>
-    </div>
+
 
     <div class = "column-main">
       <div class = "card-main">
@@ -89,10 +90,14 @@
 
 
   </div>
-
 </div>
 
-
+ <!-- Button trigger modal -->
+  <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Start your shop
+    </button>
+  </div>
 
 <%#
 
@@ -106,13 +111,13 @@
   </div> %>
 
 
+
   <!-- Button trigger modal -->
   <div class="d-flex justify-content-center">
     <button type="button" class="shop-create-button" data-toggle="modal" data-target="#exampleModal">
       Start your shop
     </button>
   </div>
-
 
 
   <%# <div> %>
