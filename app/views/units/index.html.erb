@@ -1,7 +1,5 @@
 <div  class = "container">
 
-  <h3 class = "header-text">Units to choose from</h3>
-
   <h1 class = "header-text">Units to choose from</h1>
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3">
@@ -23,7 +21,8 @@
     <% @units.each do |unit| %>
       <div class = "column">
         <div class = "card">
-          <!-- Just making sure I see the units. It can be removed later-->
+           <%= link_to  new_shop_unit_booking_path(unit.shop, unit), class: "text-decoration-none" do %>
+           <!-- Just making sure I see the units. It can be removed later-->
            <% if unit.photo.attached? %>
               <%= cl_image_tag(unit.photo.key, class: "card-img") %>
             <% end %>
@@ -31,10 +30,8 @@
               <h6><%= unit.title %></h6>
               <p><%= unit.description %></p>
               <p class = "mb-3">$<%= unit.price %></p>
-            <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit), class: "book-now" %>
             </div>
-
-
+          <%end%>
         </div>
       </div>
     <% end %>
