@@ -31,6 +31,9 @@
     <% @units.each do |unit| %>
       <div class = "column">
         <div class = "card">
+          <% if unit.photo.attached? %>
+            <%= cl_image_tag(unit.photo.key, class: "card-img") %>
+          <% end %>
           <div class = "card-text-content">
             <h6><%= unit.title %></h6>
             <p> <%= unit.description %></p>
