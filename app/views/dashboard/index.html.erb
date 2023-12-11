@@ -80,7 +80,7 @@
             <h3 class = "d-inline">End:</h3> <p class = "card-text d-inline"><%= booking.end_date.strftime("%A, %B %e, %Y") %></p>
           </div>
           <div>
-            <h3 class = "d-inline">Amount spent:</h3> <p class = "card-text d-inline"><%= booking.unit.price  %></p>
+            <h3 class = "d-inline">Amount spent:</h3> <p class = "card-text d-inline">$<%= booking.unit.price  %></p>
           </div>
 
         <% end %>
