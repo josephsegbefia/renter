@@ -24,7 +24,7 @@
               <h6><%= unit.title %></h6>
               <p><%= unit.description %></p>
               <p>$<%= unit.price %></p>
-            <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit) %>
+            <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit), class: "book-now" %>
             </div>
 
 

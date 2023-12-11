@@ -82,7 +82,7 @@
   padding: 3px;
   // text-align: center;
   background-color: #F5C53D;
-  color: white;
+  color: black;
   height: auto;
   overflow: none;
   border-radius: 4px;
@@ -98,6 +98,11 @@
 
 h6{
   font-family: $headers-font;
+}
+
+.book-now {
+  text-decoration: none;
+  color: black;
 }
 @media screen and (max-width: 600px) {
   .column {
