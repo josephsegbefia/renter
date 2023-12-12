@@ -44,8 +44,6 @@ export default class extends Controller {
 
       setLoading(true);
 
-
-
       const { error } = await stripe.confirmPayment({
 
         elements,
