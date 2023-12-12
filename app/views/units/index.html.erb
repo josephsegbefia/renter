@@ -18,6 +18,7 @@
 
 
 <div class = "row">
+  <% @units = Unit.all %>
     <% @units.each do |unit| %>
       <div class = "column">
         <div class = "card">
@@ -30,6 +31,7 @@
               <h6><%= unit.title %></h6>
               <p><%= unit.description %></p>
               <p class = "mb-3">$<%= unit.price %></p>
+              <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit) %>
             </div>
           <%end%>
         </div>
