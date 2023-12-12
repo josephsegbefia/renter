@@ -7,6 +7,9 @@ class UnitsController < ApplicationController
     @units = policy_scope(Unit)
     @unit = Unit.new
     authorize @units
+    if params[:query].present?
+      @units = @units.where("units.title ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def new
@@ -28,7 +31,7 @@ class UnitsController < ApplicationController
   def show
     @shop = Shop.find(params[:shop_id])
     @unit = Unit.find(params[:id])
-    # @booking = Booking.find(params[:booking_id])
+    @bookings = Booking.all
     authorize @unit
   end
 

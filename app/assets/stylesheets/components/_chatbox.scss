@@ -1,0 +1,19 @@
+.chatbox {
+  width: 100vw;
+  z-index: 10;
+  position: sticky;
+  bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  height: 40px;
+}
+
+#chatbox-image{
+  right: 10px;
+  filter: drop-shadow(5px 5px 5px #ffffff);
+  img{
+    width: 40px;
+    height: 40px;
+  }
+}
