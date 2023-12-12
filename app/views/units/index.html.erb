@@ -21,7 +21,7 @@
     <% @units.each do |unit| %>
       <div class = "column">
         <div class = "card">
-           <%= link_to  new_shop_unit_booking_path(unit.shop, unit), class: "text-decoration-none" do %>
+           <%= link_to  shop_unit_path(unit.shop, unit), class: "text-decoration-none" do %>
            <!-- Just making sure I see the units. It can be removed later-->
            <% if unit.photo.attached? %>
               <%= cl_image_tag(unit.photo.key, class: "card-img") %>

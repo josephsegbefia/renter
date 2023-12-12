@@ -9,9 +9,9 @@
     <h2><%= @unit.title %></h2>
     <p>Description: <%= @unit.description %></p>
     <div id="shopcard">
-    <%= link_to "Back", shop_units_path()%>
-    <%= link_to @shop.title, shop_units_path() %>
-    <%= link_to "Book now", new_shop_unit_booking_path(@unit.shop, unit) %>
+    <%= link_to "Back to browse", "/units/" %>
+    <%= link_to @shop.title, shop_path(@unit.shop) %>
+    <%= link_to "Book now", new_shop_unit_booking_path(@unit.shop, @unit) %>
     </div>
   </div>
 </div>
