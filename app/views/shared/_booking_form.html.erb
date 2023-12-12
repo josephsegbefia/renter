@@ -1,25 +1,29 @@
 <%= simple_form_for([@shop, @unit, @booking]) do |f| %>
-  <% if @booking.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+<div class = "container">
+  <div class = "row">
+    <% if @booking.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+        <ul>
+          <% @booking.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% @booking.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+
+    <%= f.input :end_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+
+    <div class="actions">
+      <%= f.submit %>
     </div>
-  <% end %>
+    <% end %>
 
-  <%= f.input :start_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-
-  <%= f.input :end_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-
-  <div class="actions">
-    <%= f.submit %>
   </div>
-<% end %>
+</div>

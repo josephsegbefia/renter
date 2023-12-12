@@ -5,6 +5,7 @@ class UnitsController < ApplicationController
   def index
     @units = Unit.all
     @units = policy_scope(Unit)
+    @unit = Unit.new
     authorize @units
   end
 
