@@ -2,13 +2,13 @@
     text-align: center;
     padding: 20px 0;
   }
-  
+
   .content-container {
     display: flex;
   }
-  
+
   .left-column {
-    width: 50%; 
+    width: 50%;
     height: 50%;
     padding-right: 20px;
   }
@@ -16,30 +16,30 @@
   body {
     font-family: Rammetto one;
   }
-  
+
   .right-column {
-    width: 50%; 
+    width: 50%;
     height: 50%;
   }
-  
+
   .description-container,
   .welcome-container {
     padding: 20px;
-    background-color: #F5C53D; 
-    margin-bottom: 20px; 
+    background-color: #F5C53D;
+    margin-bottom: 20px;
   }
-  
+
   .welcome-container {
-    background-color: #F5C53D; 
+    background-color: #F5C53D;
   }
-  
+
   .units-container {
-    background-color: #F5C53D; 
+    background-color: #F5C53D;
     display: flex;
     flex-wrap: wrap;
     height: 50%;
   }
-  
+
   .unit {
     border-radius: 50%;
     background-color: #ccc;
@@ -61,16 +61,16 @@
     background-color: #F5C53D;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  
+
   .unit-details {
     margin-top: 20px;
   }
-  
+
   .unit-details h2 {
     font-size: 24px;
     margin-bottom: 10px;
   }
-  
+
   .unit-details p {
     font-size: 18px;
     color: #333;
@@ -83,4 +83,8 @@
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .bookingcard{
+    background-color: red;
   }

@@ -23,7 +23,7 @@
       <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
       <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
       <% if current_user && current_user.id == @shop.user_id %>
-        <%= button_to "Add a new unit to your Shop", new_unit_path, method: :get %>
+        <%= button_to "Add a new unit to your Shop", new_shop_unit_path(@shop), method: :get %>
       <% end %>
     </div>
   </div>
