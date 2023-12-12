@@ -20,6 +20,7 @@ class ShopsController < ApplicationController
     @shop.user = current_user
     authorize @shop
     @shop.save
+    redirect_to shop_path(@shop)
   end
 
 
