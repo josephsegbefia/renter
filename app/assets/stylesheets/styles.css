@@ -57,10 +57,7 @@
     width: 400px;
     max-width: 600px;
     margin: 20px auto;
-    padding: 20px;
-    border: 1px solid black;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   .unit-details {
@@ -91,8 +88,8 @@
   }
 
   .unit-circle {
-    width: 350px;
-    height: 350px;
+    width: 380px;
+    height: 360px;
     margin: 10px;
     border-radius: 50%;
     display: flex;
