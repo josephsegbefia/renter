@@ -5,7 +5,7 @@ class UnitPolicy < ApplicationPolicy
     #   scope.all
     # end
     def resolve
-      scope.joins(:shop).where(shops: { user: user })
+      scope.all
     end
   end
 

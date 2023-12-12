@@ -11,6 +11,7 @@ Booking.destroy_all
 Unit.destroy_all
 Shop.destroy_all
 User.destroy_all
+Chatroom.destroy_all
 
 
 
@@ -122,25 +123,25 @@ unit4.save
 
 unit5 = Unit.create!(
   price: 100,
-  description: "The original Kayak of Matt Olympia",
+  description: "The original Kayak of Yoda Broda",
   available: true,
-  title: "Kayak 75Z",
+  title: "Kayak Yakyak",
   shop: shop2
 )
-file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/a_blue_kayak_on_a_kayak_stand__eq5yvp.jpg")
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1702391810/development/t0npj79cm5kc6yln46obuhg5038b.jpg")
 unit5.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
 unit5.save
 
 unit6 = Unit.create!(
   price: 100,
-  description: "The original Kayak of Matt Olympia",
+  description: "The original Kayak of Alaskan Champion",
   available: true,
   title: "Kayak 75Z",
   shop: shop2
 )
 file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/a_blue_kayak_on_a_kayak_stand__4_am0lbj.jpg")
-unit4.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
-unit4.save
+unit6.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
+unit6.save
 
 
 unit7 = Unit.create!(
@@ -250,7 +251,7 @@ unit15.save
 
 unit16 = Unit.create!(
   price: 100,
-  description: "This child-friendly surfboard is perfect for your young ones, or for the beginners among you"
+  description: "This child-friendly surfboard is perfect for your young ones, or for the beginners among you",
   title: "Surfboard Sunshine",
   shop: shop1
 )
@@ -292,3 +293,10 @@ booking4 = Booking.create!(
 
 
 Chatroom.create!(id:1, name: "chat")
+
+
+Unit.all.each do |unit|
+  if ! unit.photo.attached?
+    unit.destroy
+  end
+end
