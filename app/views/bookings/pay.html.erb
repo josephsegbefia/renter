@@ -1,15 +1,25 @@
 <div class = "container">
-  <div class = "row">
-    <div class = "col-md-6 col-6 order-details">
-      <h5>Order Details</h5>
-      <p><%= @unit.title %></p>
-      <p><%= @unit.description %></p>
-      <p>You want this unit from: <%= @booking.start_date.strftime("%A, %B %e, %Y")%></p>
-      <p>and return it on <%= @booking.end_date.strftime("%A, %B %e, %Y")%></p>
-      <p>Total Due Today:</p>
-      <p>$<%= @unit.price %></p>
+  <div>
+    <h4 class = "text-center m-5">Make Payment to complete your booking</h4>
+  </div>
+  <div class = "row gx-5 justify-content-center">
+    <div class = "col-md-5  order-details col-12 p-3 m-1">
+      <h5 class =  "mx-4">Order Details</h5>
+      <div class = "m-4">
+        <p class = "order-text"><%= @unit.title %></p>
+        <p class = "order-text"><%= @unit.description %></p>
+        <p class = "order-text">You want this unit from: <%= @booking.start_date.strftime("%A, %B %e, %Y")%></p>
+        <p class = "order-text">and return it on <%= @booking.end_date.strftime("%A, %B %e, %Y")%></p>
+        <p class = "order-text d-inline">Total Due Today:</p><p class = "price d-inline" >$<%= @unit.price %></p>
+      </div>
+
+      <div class = "m-4">
+        <%= link_to "Cancel", units_path, class: "cancel" %>
+      </div>
+
+
     </div>
-    <div class = "col-md-6 col-6 col-12">
+    <div class = "col-md-5 col-12 p-3 order-details m-1">
       <form id = "payment-form" data-controller="checkout" data-stripe-publishable-key="pk_test_51OKJzWDe6YLq2K8ipMsgBKaGwZbOe9jl7hgcJGsBTG4ruh8BQElSWmun2g2YJdltCHtc5HnIXdt2g2t36OJJcZr900vUXkLvoZ" data-stripe-client-secret="<%= @payment_intent_client_secret %>">
         <div id = "payment-message" class="hidden"></div>
         <div id = "payment-element"></div>
