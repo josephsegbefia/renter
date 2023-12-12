@@ -5,6 +5,10 @@ class UnitsController < ApplicationController
   def index
     @units = Unit.all
     @units = policy_scope(Unit)
+    authorize @units
+    if params[:query].present?
+      @units = @units.where("units.title ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def new

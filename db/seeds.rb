@@ -269,3 +269,5 @@ booking = Booking.create!(
   start_date: "12-12-2023",
   end_date: "14-12-2023"
 )
+
+Chatroom.create!(id:1, name: "chat")

@@ -57,6 +57,8 @@ gem "sassc-rails"
 gem "pundit"
 gem "cloudinary"
 gem "simple_calendar", "~> 2.4"
+gem "pg_search"
+
 
 group :development, :test do
   gem "dotenv-rails"

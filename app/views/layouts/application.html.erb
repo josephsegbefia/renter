@@ -20,12 +20,20 @@
       <%= render "shared/navbar" %>
       <div class="content">
         <%= yield %>
+        <div class="chatbox">
+          <%= link_to chatroom_path(1), id:"chatbox-image" do %>
+            <%= image_tag image_path("chatbot.png") %>
+          <% end %>
+        </div>
+
+
+
       </div>
+
+
       <%= render "shared/footer" %>
     </div>
     <%= render "shared/flashes" %>
-
-
 
   </body>
 </html>
