@@ -18,3 +18,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<button><%= link_to "Back to your shop: #{@shop.title}", "/shops/#{@shop.id}" %></button>
