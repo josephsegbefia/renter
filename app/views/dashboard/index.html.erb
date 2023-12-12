@@ -167,7 +167,6 @@
           <%= simple_form_for(@shop, html: { class: 'mt-4' }) do |modal_form| %>
             <%= modal_form.input :title, label: 'Title' %>
             <%= modal_form.input :description, label: 'Description' %>
-            <%= modal_form.input :photo, as: :file, label: 'Photo' %>
             <%= modal_form.submit 'Submit', class: 'button mt-3' %>
           <% end %>
         </div>
