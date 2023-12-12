@@ -50,10 +50,10 @@
   <div class = "row-main">
     <div class = "column-main">
       <div class = "card-main">
+        <h3 class = "text-center">Your upcoming rental</h3>
+        <hr>
           <% if @next_booking %>
              <h3 class="innertxt">
-                <h3 class = "text-center">Your upcoming rental</h3>
-                <hr>
 
                 <div>
                   <h3 class = "d-inline">Booking Number:</h3> <p class = "card-text d-inline"><%= @next_booking.id %></p>
@@ -67,8 +67,10 @@
                 <div>
                   <h3 class = "d-inline">End:</h3> <p class = "card-text d-inline"><%= @next_booking.end_date.strftime("%A, %B %e, %Y") %></p>
                 </div>
-              </div>
-            <% end %>
+          <% else %>
+              <p>You have no upcoming bookings</p>
+          <% end %>
+          </div>
       </div>
 
 
@@ -167,7 +169,6 @@
           <%= simple_form_for(@shop, html: { class: 'mt-4' }) do |modal_form| %>
             <%= modal_form.input :title, label: 'Title' %>
             <%= modal_form.input :description, label: 'Description' %>
-            <%= modal_form.input :photo, as: :file, label: 'Photo' %>
             <%= modal_form.submit 'Submit', class: 'button mt-3' %>
           <% end %>
         </div>

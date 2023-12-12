@@ -11,7 +11,7 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find(params[:id])
     authorize @shop
-    @units = Unit.all
+    @units = @shop.units
   end
 
   def create
@@ -20,7 +20,7 @@ class ShopsController < ApplicationController
     @shop.user = current_user
     authorize @shop
     @shop.save
-    redirect_to "/shops/#{@shop.id}"
+    redirect_to shop_path(@shop)
   end
 
 
