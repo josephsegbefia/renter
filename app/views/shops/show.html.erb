@@ -8,7 +8,10 @@
   <h1><%= @shop.title %></h1>
 </div>
 
-<div class="content-container">
+<div class="content-container has-bg-img">
+  <% if @shop.photo.attached? %>
+    <%= cl_image_tag(@shop.photo.key, class: "bg-img") %>
+  <% end %>
   <div class="left-column">
     <div class="description-container">
       <h2><%= @shop.description %></h2>
