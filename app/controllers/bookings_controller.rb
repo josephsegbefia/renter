@@ -21,10 +21,15 @@ class BookingsController < ApplicationController
     # @booking.shop = @shop.id
     @booking.unit = @unit
     authorize @booking
-    if @booking.save
-      redirect_to "/dashboard", notice: "Booking was created successfully"
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @booking.save
+        format.html { redirect_to shop_unit_booking_pay_path(@shop, @unit, @booking), notice: "Booking was created successfully." }
+        format.json { render :show, status: :created, location: @booking }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json{ render json: @booking.errors, status: :unprocessable_entity }
+        format.turbo_stream { render :form_update, status: :unprocessable_entity}
+      end
     end
   end
 
