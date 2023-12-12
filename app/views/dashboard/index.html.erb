@@ -3,6 +3,12 @@
     <p class = "welcome">Welcome <%= @user.first_name %>,</p><br><p class = "card-text">have a quick look at your activities!</p>
   </div>
 
+  <% if params['redirect_status'] == 'succeeded' %>
+    <div class = 'alert alert-success'>Payment successful</div>
+  <% elsif params['redirect_status'] == 'failed' %>
+    <div class = 'alert alert-danger'>Payment failed.Please try again.</div>
+  <% end %>
+
   <div class = "row">
     <div class = "column">
       <div class = "card">
@@ -83,7 +89,7 @@
           <div>
             <h3 class = "d-inline">Amount spent:</h3> <p class = "card-text d-inline">$<%= booking.unit.price  %></p>
           </div>
-
+          <hr>
         <% end %>
       </div>
     </div>

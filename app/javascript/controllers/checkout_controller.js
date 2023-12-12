@@ -44,15 +44,13 @@ export default class extends Controller {
 
       setLoading(true);
 
-
-
       const { error } = await stripe.confirmPayment({
 
         elements,
 
         confirmParams: {
 
-          return_url: "http://localhost:3000/bookings"
+          return_url: "http://localhost:3000/dashboard"
 
         },
 
